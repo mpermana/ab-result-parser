@@ -14,7 +14,7 @@ npm install --save ab-result-parser
 ## Usage
 
 ```js
-const abResult = require('ab-result-parser');
+const abResultParser = require('ab-result-parser');
 
 const data  = `This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
@@ -70,6 +70,6 @@ Percentage of the requests served within a certain time (ms)
   99%     16
  100%    266 (longest request)`;
 
-const result = abResult(data);
+const result = abResultParser(data);
 console.log(result);
 ```
