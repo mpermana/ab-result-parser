@@ -1,6 +1,6 @@
 {
-  "name": "ab-result",
-  "version": "1.0.2",
+  "name": "ab-result-parser",
+  "version": "0.1.0",
   "description": "Apache Benchmark result parser",
   "main": "index.js",
   "scripts": {
@@ -24,7 +24,7 @@
   },
   "repository": {
     "type" : "git",
-    "url" : "https://github.com/aquilax/ab-result"
+    "url" : "https://github.com/leopeng1995/ab-result-parser"
   },
   "runkitExampleFilename": "example.js"
 }

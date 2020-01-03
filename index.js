@@ -1,1 +1,1 @@
-module.exports = require('./lib/ab-result');
+module.exports = require('./lib/ab-result-parser');

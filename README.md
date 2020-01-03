@@ -8,45 +8,67 @@ Apache Benchmark result parser
 ## Installation
 
 ```bash
-npm install --save ab-result
+npm install --save ab-result-parser
 ```
 
 ## Usage
 
 ```js
-const abResult = require('ab-result');
+const abResult = require('ab-result-parser');
 
-const data  = `This is ApacheBench, Version 2.3 <$Revision: 1706008 $>
+const data  = `This is ApacheBench, Version 2.3 <$Revision: 1826891 $>
 Copyright 1996 Adam Twiss, Zeus Technology Ltd, http://www.zeustech.net/
 Licensed to The Apache Software Foundation, http://www.apache.org/
 
-Benchmarking localhost (be patient).....done
+Benchmarking 127.0.0.1 (be patient)
+Completed 1000 requests
+Completed 2000 requests
+Completed 3000 requests
+Completed 4000 requests
+Completed 5000 requests
+Completed 6000 requests
+Completed 7000 requests
+Completed 8000 requests
+Completed 9000 requests
+Completed 10000 requests
+Finished 10000 requests
 
 
 Server Software:
-Server Hostname:        localhost
-Server Port:            8080
+Server Hostname:        127.0.0.1
+Server Port:            8000
 
-Document Path:          /1.txt
-Document Length:        2 bytes
+Document Path:          /
+Document Length:        16 bytes
 
-Concurrency Level:      1
-Time taken for tests:   0.000 seconds
-Complete requests:      1
+Concurrency Level:      20
+Time taken for tests:   2.073 seconds
+Complete requests:      10000
 Failed requests:        0
-Total transferred:      122 bytes
-HTML transferred:       2 bytes
-Requests per second:    2132.20 [#/sec] (mean)
-Time per request:       0.469 [ms] (mean)
-Time per request:       0.469 [ms] (mean, across all concurrent requests)
-Transfer rate:          254.03 [Kbytes/sec] received
+Total transferred:      2230000 bytes
+HTML transferred:       160000 bytes
+Requests per second:    4822.95 [#/sec] (mean)
+Time per request:       4.147 [ms] (mean)
+Time per request:       0.207 [ms] (mean, across all concurrent requests)
+Transfer rate:          1050.31 [Kbytes/sec] received
 
 Connection Times (ms)
-                min  mean[+/-sd] median   max
-Connect:        0    0   0.0      0       0
-Processing:     0    0   0.0      0       0
-Waiting:        0    0   0.0      0       0
-Total:          0    0   0.0      0       0`;
+              min  mean[+/-sd] median   max
+Connect:        0    0   5.3      0     263
+Processing:     0    4  10.7      3     266
+Waiting:        0    4  10.7      3     266
+Total:          1    4  11.9      3     266
+
+Percentage of the requests served within a certain time (ms)
+  50%      3
+  66%      4
+  75%      4
+  80%      5
+  90%      6
+  95%      8
+  98%     13
+  99%     16
+ 100%    266 (longest request)`;
 
 const result = abResult(data);
 console.log(result);

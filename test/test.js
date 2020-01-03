@@ -1,4 +1,4 @@
-const abResult = require('../index');
+const abResultParser = require('../index');
 const { expect } = require('chai');
 
 describe('parse', () => {
@@ -219,7 +219,7 @@ Percentage of the requests served within a certain time (ms)
             },
         ];
         testCases.forEach((testCase) => {
-            const result = abResult(testCase.data);
+            const result = abResultParser(testCase.data);
             expect(result).to.deep.equal(testCase.expected);
         });
     });
